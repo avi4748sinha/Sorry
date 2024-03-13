@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Besti</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+      padding-top: 50px;
+    }
+    .container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .heart {
+      color: #e74c3c;
+      cursor: pointer;
+      font-size: 36px;
+    }
+    .heart-beat {
+      animation: heartbeat 1.5s infinite alternate;
+    }
+    .heart:hover {
+      text-shadow: 0 0 5px #e74c3c;
+    }
+    @keyframes heartbeat {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    .message-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+    .message-container.show {
+      max-height: 1000px;
+      transition: max-height 1s ease-in;
+    }
+    .message {
+      font-size: 20px;
+      font-style: italic;
+      color: #333;
+    }
+    .btn-custom {
+      background-color: #e74c3c;
+      border: none;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+    .btn-custom:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mb-4">Dear Besti,</h1>
+  <p class="lead">I want you to know...</p>
+  <div class="letter">
+    <p>
+      <span class="heart" id="heartSymbol" onclick="toggleHeartbeat()">&hearts;</span>
+    </p>
+    <div class="message-container" id="messageContainer">
+      <div class="message">
+        There's no one else in college like you. I can never lose you.<br>
+        I miss you every moment, and I don't have a problem with your boyfriend, but at least our friendship can't be destroyed by such things.<br>
+        I promise I will never make you sad and will do every possible thing to make you happy.Abhi to hme placement tk saat rehni hai itni jldi mere se bore ho gyi🥺.
+        I love you so much yar.Please don't goo
+      </div>
+    </div>
+  </div>
+  <a href="https://wa.me/+91 9504919122" class="btn btn-custom mt-3">Let's Chat</a>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+  function toggleHeartbeat() {
+    var heartSymbol = document.getElementById("heartSymbol");
+    heartSymbol.classList.toggle("heart-beat");
+  }
+
+  document.getElementById("heartSymbol").addEventListener("click", function() {
+    var messageContainer = document.getElementById("messageContainer");
+    if (messageContainer.classList.contains("show")) {
+      messageContainer.classList.remove("show");
+    } else {
+      messageContainer.classList.add("show");
+    }
+  });
+</script>
+
+</body>
+</html>
